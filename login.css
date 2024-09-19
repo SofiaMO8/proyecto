@@ -1,8 +1,12 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -10,74 +14,89 @@ body {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    width: 100%;
+    max-width: 400px;
 }
 
 .login-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 h2 {
-    margin-bottom: 20px;
-    color: #0072ff;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
 }
 
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
 }
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    color: #333;
+    font-size: 16px;
 }
 
-input[type="text"],
-input[type="password"],
+.input-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: #333;
+    pointer-events: none;
+    transition: 0.5s;
+    font-size: 16px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #8e44ad;
+    font-size: 12px;
+}
+
 input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    border: none;
+    color: #333;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #0072ff;
+.img-preview {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.img-preview img {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    background-color: #8e44ad;
+    color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
-    color: white;
-    font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #005bb5;
-}
-
-.preview-container {
-    margin-top: 15px;
-}
-
-#profile-preview {
-    max-width: 120px;
-    max-height: 120px;
-    border-radius: 50%;
-    margin-top: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.btn:hover {
+    background-color: #2980b9;
 }
